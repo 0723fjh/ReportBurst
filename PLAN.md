@@ -20,6 +20,6 @@
 - [x] Prepare Vercel build settings and exclude test data and development files from CLI uploads; rerun local release checks.
 - [x] Owner publishes the reviewed static build with Vercel Drop; verify the public production URL and core flow.
 - [x] Create a private GitHub repository and push the reviewed V1 source.
-- [ ] Connect the existing Vercel `reportburst` project to that repository after the owner adds GitHub as a Vercel login connection.
+- [ ] Connect the existing Vercel `reportburst` project to that repository after granting the Vercel GitHub App access to the private repository.
 
 Detailed implementation findings and checks are recorded in `task_plan.md`, `findings.md`, `progress.md`, and `STATUS.md`.
