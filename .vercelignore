@@ -1,0 +1,10 @@
+outputs/
+tests/
+scripts/
+dist/
+test-results/
+.npm-cache/
+*.tsbuildinfo
+*.md
+playwright.config.ts
+eslint.config.js

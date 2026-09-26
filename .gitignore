@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.npm-cache/
+playwright-report/
+test-results/
+outputs/
+.vercel/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+*.pem
+*.key
