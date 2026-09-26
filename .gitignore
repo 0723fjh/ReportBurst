@@ -11,3 +11,4 @@ outputs/
 !.env.example
 *.pem
 *.key
+/.vercel-hostname-preload.cjs

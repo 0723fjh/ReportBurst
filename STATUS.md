@@ -44,6 +44,12 @@ Performance on one Windows/Edge machine with five groups: 1k/10k/50k/100k-row CS
 - The first production run had one false failure in the mobile language-menu check because the test retained a scrolled position after editing fields. The test now scrolls to the page top before checking the header menu; a separate 375 px browser check found the menu at x=274, y=20, and all five tests then passed. This was a test-only change; the published app files did not change.
 - Vercel Drop is not connected to this local folder for automatic redeployment. Future app changes require a new deployment workflow.
 
+## GitHub integration on 2026-09-27
+
+- Created the private repository https://github.com/0723fjh/ReportBurst and pushed the reviewed V1 source on `main` (initial commit `bdfeba8`). Build output, sample workbooks, local environment files and caches are excluded from Git.
+- Linked the local folder to the existing Vercel project `dopamine15/reportburst`. The public site remains live.
+- Vercel rejected `vercel git connect` because the Vercel account does not yet have a GitHub login connection. The owner needs to add GitHub account `0723fjh` in Vercel account Authentication settings, then the connection can be retried.
+
 ## Known limitations and risks
 
 - Input cap: 40 MB. Legacy `.xls`, encrypted workbooks, non-UTF-8 CSV and CSV delimiter customization are not supported.
@@ -55,4 +61,4 @@ Performance on one Windows/Edge machine with five groups: 1k/10k/50k/100k-row CS
 
 ## Next action
 
-The public V1 is live. For future changes, update the local build and publish through a repeatable Vercel project workflow, then rerun production URL checks.
+The public V1 is live. Complete the GitHub login connection in Vercel, connect the existing project to the private repository, then verify a Git-triggered production build on the same URL.

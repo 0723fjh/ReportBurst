@@ -76,8 +76,8 @@ The owner published the reviewed `dist/` folder with Vercel Drop to [https://rep
 
 **Direct CLI deployment (no GitHub repository required):** After reviewing the local build, install Vercel CLI, sign in with the account owner, link this folder as a Vercel project, deploy a preview and verify it. Publish to production only after the project owner approves that concrete build. Vercel assigns a `.vercel.app` address; a custom domain is optional.
 
-**Git-connected deployment:** Create a GitHub repository for this folder, push only the reviewed code, then import that repository in Vercel. `.gitignore` excludes `node_modules/`, `.npm-cache/`, `dist/`, sample outputs and Vercel's local project link. Vercel can then rebuild after later pushes.
+**Git-connected deployment:** The reviewed source is in the private [ReportBurst GitHub repository](https://github.com/0723fjh/ReportBurst). The existing Vercel project is linked locally but still needs the owner's GitHub login connection before its Git integration can be enabled. `.gitignore` excludes `node_modules/`, `.npm-cache/`, `dist/`, sample outputs and Vercel's local project link. Once connected, Vercel can rebuild after later pushes.
 
 For either route, confirm **Build Command** is `npm run build` and **Output Directory** is `dist`. On the deployed URL, test XLSX and CSV upload, sheet/header selection, recipient warnings, ZIP download, report contents and EML attachments. Check the browser Network panel for unexpected requests.
 
-Vercel Drop does not automatically redeploy this local folder after code changes. For future releases, use a connected Git repository or the Vercel CLI, then verify the resulting public URL.
+Vercel Drop does not automatically redeploy this local folder after code changes. Complete the GitHub connection before relying on automatic releases, then verify the resulting public URL.
