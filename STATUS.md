@@ -48,7 +48,7 @@ Performance on one Windows/Edge machine with five groups: 1k/10k/50k/100k-row CS
 
 - Created the private repository https://github.com/0723fjh/ReportBurst and pushed the reviewed V1 source on `main` (initial commit `bdfeba8`). Build output, sample workbooks, local environment files and caches are excluded from Git.
 - Linked the local folder to the existing Vercel project `dopamine15/reportburst`. The public site remains live.
-- The owner added GitHub account `0723fjh` as a Vercel login connection. A subsequent `vercel git connect` reached the repository step but failed because the Vercel GitHub App does not yet have access to the private repository. The owner needs to grant the app access to `0723fjh/ReportBurst` in GitHub Installed Apps, then the connection can be retried.
+- The owner added GitHub account `0723fjh` as a Vercel login connection and installed the Vercel GitHub App with access to the private repository. `vercel git connect https://github.com/0723fjh/ReportBurst.git` then reported `Connected` for the existing project. A Git-triggered production build still needs verification.
 
 ## Known limitations and risks
 
@@ -61,4 +61,4 @@ Performance on one Windows/Edge machine with five groups: 1k/10k/50k/100k-row CS
 
 ## Next action
 
-The public V1 is live. Grant the Vercel GitHub App access to the private repository, connect the existing project, then verify a Git-triggered production build on the same URL.
+Push this documentation update to `main`, verify that Vercel builds it automatically, and rerun the production browser checks on the same public URL.
