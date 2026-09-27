@@ -42,13 +42,15 @@ Performance on one Windows/Edge machine with five groups: 1k/10k/50k/100k-row CS
 - Public URL: https://reportburst.vercel.app/. An isolated Edge browser received HTTP 200, the ReportBurst page title, and the Chinese interface.
 - The five Edge browser end-to-end tests passed against the production URL. They cover CSV and XLSX upload, per-group ZIP and EML output, generated XLSX contents, conflicting and missing recipients, blank split values, more than five groups, Chinese/English switching, and a request check that observed only GET requests to the app origin for the sample CSV flow.
 - The first production run had one false failure in the mobile language-menu check because the test retained a scrolled position after editing fields. The test now scrolls to the page top before checking the header menu; a separate 375 px browser check found the menu at x=274, y=20, and all five tests then passed. This was a test-only change; the published app files did not change.
-- Vercel Drop is not connected to this local folder for automatic redeployment. Future app changes require a new deployment workflow.
+- At the time of the original Vercel Drop release, the local folder was not connected for automatic redeployment. The GitHub integration below now provides that workflow.
 
 ## GitHub integration on 2026-09-27
 
 - Created the private repository https://github.com/0723fjh/ReportBurst and pushed the reviewed V1 source on `main` (initial commit `bdfeba8`). Build output, sample workbooks, local environment files and caches are excluded from Git.
 - Linked the local folder to the existing Vercel project `dopamine15/reportburst`. The public site remains live.
-- The owner added GitHub account `0723fjh` as a Vercel login connection and installed the Vercel GitHub App with access to the private repository. `vercel git connect https://github.com/0723fjh/ReportBurst.git` then reported `Connected` for the existing project. A Git-triggered production build still needs verification.
+- The owner added GitHub account `0723fjh` as a Vercel login connection and installed the Vercel GitHub App with access to the private repository. `vercel git connect https://github.com/0723fjh/ReportBurst.git` then reported `Connected` for the existing project.
+- Pushing commit `b33f4a1` to `main` automatically started production deployment `dpl_8oX3hbSd8DxvfEagL5YYFfgmQ2uy`. Vercel reported `Ready` and assigned the existing `https://reportburst.vercel.app/` alias. All five Edge browser end-to-end checks passed against that public URL, including CSV/XLSX ZIP generation, recipient decisions, more than five groups, Chinese/English switching and the sample CSV privacy request check.
+- For this release, `npm run typecheck`, nine unit tests and `npm run build` passed. The initial lint run was interrupted by an ignored local helper used for Vercel CLI compatibility; the helper was moved under the ignored `.npm-cache/` directory and lint was rerun successfully.
 
 ## Known limitations and risks
 
@@ -61,4 +63,4 @@ Performance on one Windows/Edge machine with five groups: 1k/10k/50k/100k-row CS
 
 ## Next action
 
-Push this documentation update to `main`, verify that Vercel builds it automatically, and rerun the production browser checks on the same public URL.
+The GitHub-to-Vercel production workflow is operational. For future changes, run the project checks, push to `main`, and verify the resulting production deployment and browser workflow at the public URL.

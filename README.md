@@ -76,8 +76,8 @@ The owner published the reviewed `dist/` folder with Vercel Drop to [https://rep
 
 **Direct CLI deployment (no GitHub repository required):** After reviewing the local build, install Vercel CLI, sign in with the account owner, link this folder as a Vercel project, deploy a preview and verify it. Publish to production only after the project owner approves that concrete build. Vercel assigns a `.vercel.app` address; a custom domain is optional.
 
-**Git-connected deployment:** The reviewed source is in the private [ReportBurst GitHub repository](https://github.com/0723fjh/ReportBurst), and the existing Vercel project is connected to that repository. `.gitignore` excludes `node_modules/`, `.npm-cache/`, `dist/`, sample outputs and Vercel's local project link. The first Git-triggered production build is being verified.
+**Git-connected deployment:** The reviewed source is in the private [ReportBurst GitHub repository](https://github.com/0723fjh/ReportBurst), and the existing Vercel project is connected to that repository. A push to `main` triggered a successful production build on 2026-09-27; all five Edge browser end-to-end tests passed on the existing public URL. `.gitignore` excludes `node_modules/`, `.npm-cache/`, `dist/`, sample outputs and Vercel's local project link.
 
 For either route, confirm **Build Command** is `npm run build` and **Output Directory** is `dist`. On the deployed URL, test XLSX and CSV upload, sheet/header selection, recipient warnings, ZIP download, report contents and EML attachments. Check the browser Network panel for unexpected requests.
 
-The original Vercel Drop upload remains the last verified production release until a Git-triggered deployment is confirmed on the public URL.
+After each future push to `main`, confirm the deployment is Ready and verify the core workflow at the public URL before treating the release as complete.

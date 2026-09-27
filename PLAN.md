@@ -21,6 +21,6 @@
 - [x] Owner publishes the reviewed static build with Vercel Drop; verify the public production URL and core flow.
 - [x] Create a private GitHub repository and push the reviewed V1 source.
 - [x] Connect the existing Vercel `reportburst` project to the private GitHub repository.
-- [ ] Verify a push to `main` triggers a successful production deployment on the existing public URL.
+- [x] Verify a push to `main` triggers a successful production deployment on the existing public URL.
 
 Detailed implementation findings and checks are recorded in `task_plan.md`, `findings.md`, `progress.md`, and `STATUS.md`.
